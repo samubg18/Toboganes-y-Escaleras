@@ -1,9 +1,22 @@
 
 /**
- * Write a description of class test here.
+ * CLASE ELEMENTO
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Clase que contiene los atributos y métodos comunes a los objetos tobogan
+ * y escalera.
+ * 
+ * @author Samuel Borque 
+ * @version V01 - 11/22
  */
 public abstract class Elemento {
+    protected int inicio;
+    protected int fin;
+    
+    protected int CasillaInicial(){
+        return this.inicio;
+    }
+    
+    protected int CasillaFinal(){
+        return this.fin;
+    }
 }
