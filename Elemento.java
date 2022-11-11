@@ -19,4 +19,8 @@ public abstract class Elemento {
     protected int CasillaFinal(){
         return this.fin;
     }
+    
+    public boolean esInicio(int casilla){
+        return casilla == this.inicio;
+    }
 }
