@@ -16,9 +16,15 @@ public class Escalera extends Elemento {
         this.fin = 0;
     }
     
-    public void Aleatorio(int min, int max){
-        this.inicio = Utiles.NumeroAleatorio(min+1, max+10);
-        this.fin = Utiles.NumeroAleatorio(inicio, max);
+    public Escalera(Escalera t){
+        this.inicio = t.inicio;
+        this.fin = t.fin;
+    }
+    
+    public static Escalera Aleatorio(int min, int max){
+        int inicio = Utiles.NumeroAleatorio(min+1, max+10);
+        int fin = Utiles.NumeroAleatorio(inicio, max);
+        return new Escalera(inicio, fin);
     }
     
     public boolean EsValido(){
@@ -26,6 +32,18 @@ public class Escalera extends Elemento {
             return true;
         else
             return false;
+    }
+    
+    public static Escalera leerEscalera(int min, int max){
+        int inicio;
+        int fin;
+        do { 
+            inicio = Teclado.leerEntero("Indique el inicio de la escalera: ");
+        } while (inicio <= 1 || inicio >= max);
+        do {
+            fin = Teclado.leerEntero("Indique el final de la escalera (debe ser mayor que el inicio): ");
+        }while (fin <= inicio || fin > max);
+        return new Escalera(inicio, fin);
     }
 }
 
