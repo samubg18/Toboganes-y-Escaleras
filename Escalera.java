@@ -1,9 +1,11 @@
 
 /**
- * Write a description of class test here.
+ * Esta es una clase heredada de la clase abstracta Elemento que permite
+ * generar objetos Escalera y operar con ellos utilizando los métodos de
+ * esta misma clase y de la clase Elemento.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Juan Miguel.
+ * @version V01 - 11/22.
  */
 public class Escalera extends Elemento {
     public Escalera(int inicio, int fin){
@@ -21,17 +23,18 @@ public class Escalera extends Elemento {
         this.fin = t.fin;
     }
     
-    public static Escalera Aleatorio(int min, int max){
-        int inicio = Utiles.NumeroAleatorio(min+1, max+10);
-        int fin = Utiles.NumeroAleatorio(inicio, max);
-        return new Escalera(inicio, fin);
+    public String toString(){
+        return "Escalera [ " + this.inicio + " -> " + this.fin + " ]";
     }
     
-    public boolean EsValido(){
-        if (this.inicio < this.fin)
-            return true;
-        else
-            return false;
+    public void escribirElemento(String msg){
+        System.out.println(msg + "una escalera que SUBE hasta la casilla " + this.fin);
+    }
+    
+    public static Escalera Aleatorio(int min, int max){
+        int inicio = Utiles.NumeroAleatorio(min+1, max-10);
+        int fin = Utiles.NumeroAleatorio(inicio, max);
+        return new Escalera(inicio, fin);
     }
     
     public static Escalera leerEscalera(int min, int max){
@@ -46,4 +49,3 @@ public class Escalera extends Elemento {
         return new Escalera(inicio, fin);
     }
 }
-

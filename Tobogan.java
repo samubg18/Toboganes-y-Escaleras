@@ -1,9 +1,11 @@
 
 /**
- * Write a description of class test here.
+ * Esta es una clase heredada de la clase abstracta Elemento que permite
+ * generar objetos Tobogán y operar con ellos utilizando los métodos de
+ * esta misma clase y de la clase Elemento.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Samuel Borque.
+ * @version V01 - 11/22. 
  */
 public class Tobogan extends Elemento {
     public Tobogan(int inicio, int fin){
@@ -21,17 +23,18 @@ public class Tobogan extends Elemento {
         this.fin = t.fin;
     }
     
+    public String toString(){
+        return "Tobogán [ " + this.inicio + " -> " + this.fin + " ]";
+    }
+    
+    public void escribirElemento(String msg){
+        System.out.println(msg + "un tobogán que BAJA hasta la casilla " + this.fin);
+    }
+    
     public static Tobogan Aleatorio(int min, int max){
         int inicio = Utiles.NumeroAleatorio(min+10, max-1);
         int fin = Utiles.NumeroAleatorio(min, inicio);
         return new Tobogan(inicio, fin);
-    }
-    
-    public boolean EsValido(int min, int max){
-        if (this.inicio > this.fin)
-            return true;
-        else
-            return false;
     }
     
     public static Tobogan leerTobogan(int min, int max){
