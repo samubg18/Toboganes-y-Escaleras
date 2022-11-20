@@ -5,8 +5,8 @@
  * Clase que contiene los atributos y métodos comunes a los objetos tobogan
  * y escalera.
  * 
- * @author Samuel Borque 
- * @version V01 - 11/22
+ * @author Samuel Borque, Juan Miguel.
+ * @version V01 - 11/22.
  */
 public abstract class Elemento {
     // Atributos
